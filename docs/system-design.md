@@ -52,22 +52,46 @@ classDiagram
 
 ## 2. Use Case Diagram
 ```mermaid
-useCaseDiagram
-    %%{ init: { "flowchart": { "htmlLabels": true }}}%%
-flowchart TD
-    A1[Interviewer] --> B1(Schedule Interview)
-    A1 --> B2(Start Video Call)
-    A1 --> B3(Share Screen)
-    A1 --> B4(Record Interview)
-    A1 --> B5(End Interview)
+graph TD
+    subgraph Actors
+        A1[Interviewer]
+        A2[Interviewee]
+        A3[Admin]
+    end
 
-    A2[Interviewee] --> C1(Join Interview)
-    A2 --> C2(Participate in Call)
-    A2 --> C3(View Shared Screen)
+    subgraph Interviewer Actions
+        B1[Schedule Interview]
+        B2[Start Video Call]
+        B3[Share Screen]
+        B4[Record Interview]
+        B5[End Interview]
+    end
 
-    A3[Admin] --> D1(Manage Users)
-    A3 --> D2(View Recordings)
-    A3 --> D3(Monitor System)
+    subgraph Interviewee Actions
+        C1[Join Interview]
+        C2[Participate in Call]
+        C3[View Shared Screen]
+    end
+
+    subgraph Admin Actions
+        D1[Manage Users]
+        D2[View Recordings]
+        D3[Monitor System]
+    end
+
+    A1 --> B1
+    A1 --> B2
+    A1 --> B3
+    A1 --> B4
+    A1 --> B5
+
+    A2 --> C1
+    A2 --> C2
+    A2 --> C3
+
+    A3 --> D1
+    A3 --> D2
+    A3 --> D3
 ```
 
 ## 3. Activity Diagram
@@ -167,4 +191,4 @@ erDiagram
 - Role-based access control
 - Secure storage of recordings
 - Authentication and authorization
-- Data privacy compliance 
+- Data privacy compliance
