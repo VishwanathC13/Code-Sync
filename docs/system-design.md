@@ -53,23 +53,21 @@ classDiagram
 ## 2. Use Case Diagram
 ```mermaid
 useCaseDiagram
-    actor Interviewer
-    actor Interviewee
-    actor Admin
+    %%{ init: { "flowchart": { "htmlLabels": true }}}%%
+flowchart TD
+    A1[Interviewer] --> B1(Schedule Interview)
+    A1 --> B2(Start Video Call)
+    A1 --> B3(Share Screen)
+    A1 --> B4(Record Interview)
+    A1 --> B5(End Interview)
 
-    Interviewer --> (Schedule Interview)
-    Interviewer --> (Start Video Call)
-    Interviewer --> (Share Screen)
-    Interviewer --> (Record Interview)
-    Interviewer --> (End Interview)
+    A2[Interviewee] --> C1(Join Interview)
+    A2 --> C2(Participate in Call)
+    A2 --> C3(View Shared Screen)
 
-    Interviewee --> (Join Interview)
-    Interviewee --> (Participate in Call)
-    Interviewee --> (View Shared Screen)
-
-    Admin --> (Manage Users)
-    Admin --> (View Recordings)
-    Admin --> (Monitor System)
+    A3[Admin] --> D1(Manage Users)
+    A3 --> D2(View Recordings)
+    A3 --> D3(Monitor System)
 ```
 
 ## 3. Activity Diagram
