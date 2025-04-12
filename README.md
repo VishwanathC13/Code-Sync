@@ -1,8 +1,5 @@
 ✨ Video Calling Interview Platform ✨
 
-<p align="center">
-  <img src="/public/screenshot-for-readme.png" alt="Demo Screenshot" />
-</p>🚀 Tech Stack
 
 Framework: Next.js (with App Router)
 
